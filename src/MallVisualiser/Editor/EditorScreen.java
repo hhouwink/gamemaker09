@@ -77,32 +77,32 @@ public class EditorScreen extends Screen {
 		{
 			buttons[0] = new EditorButton(ButtonType.NewMap, game,
 					Assets.editorNewMapIcon, 800, 300, worldIO);
-			buttons[0].w = 200;
-			buttons[0].h = 200;
+			buttons[0].w = 50;
+			buttons[0].h = 50;
 		}
 		{
 			buttons[4] = new EditorButton(ButtonType.ResizeMap, game,
 					Assets.editorResizeMapIcon, 800, 375, worldIO);
-			buttons[4].w = 200;
-			buttons[4].h = 200;
+			buttons[4].w = 50;
+			buttons[4].h = 50;
 		}
 		{
 			buttons[1] = new EditorButton(ButtonType.LoadMap, game,
 					Assets.editorLoadMapIcon, 800, 450, worldIO);
-			buttons[1].w = 200;
-			buttons[1].h = 200;
+			buttons[1].w = 50;
+			buttons[1].h = 50;
 		}
 		{
 			buttons[2] = new EditorButton(ButtonType.SaveMap, game,
 					Assets.editorSaveMapIcon, 800, 525, worldIO);
-			buttons[2].w = 200;
-			buttons[2].h = 200;
+			buttons[2].w = 50;
+			buttons[2].h = 50;
 		}
 		{
 			buttons[3] = new EditorButton(ButtonType.toMenu, game,
 					Assets.editorToMenuIcon, 800, 600, worldIO);
-			buttons[3].w = 200;
-			buttons[3].h = 200;
+			buttons[3].w = 50;
+			buttons[3].h = 50;
 		}
 	}
 

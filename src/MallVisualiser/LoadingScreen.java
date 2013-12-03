@@ -50,7 +50,7 @@ public class LoadingScreen extends Screen {
 				PixmapFormat.RGB565);
 		Assets.editorSaveMapIcon = g.newPixmap("save.png", PixmapFormat.RGB565);
 		Assets.editorLoadMapIcon = g.newPixmap("load.png", PixmapFormat.RGB565);
-		Assets.editorToMenuIcon = g.newPixmap("quit3.png", PixmapFormat.RGB565);
+		Assets.editorToMenuIcon = g.newPixmap("quit.png", PixmapFormat.RGB565);
 
 		// Visualiser-mode
 		Assets.visualiserRouteGround0 = g.newPixmap(

@@ -16,8 +16,8 @@ public class MainMenuScreen extends Screen {
 		buttons = new Button[3];
 		buttons[0] = new MenuButton(MenuButton.ButtonType.Editor, game,
 				Assets.menuButtonEditorMode, 1024 - 350, 200);
-		buttons[0].w = 400;
-		buttons[0].h = 400;
+		buttons[0].w = 200;
+		buttons[0].h = 200;
 		buttons[1] = new MenuButton(MenuButton.ButtonType.GrandChallenge, game,
 				Assets.menuButtonGCMode, 100, 300);
 		buttons[1].w = 200;
