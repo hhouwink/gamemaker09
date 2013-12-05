@@ -16,7 +16,7 @@ public class EditorToggleButton extends ToggleButton {
 	}
 
 	public static enum ButtonType {
-		Buildmode, Destroymode, Startmode
+		Buildmode, Destroymode, Startmode, Runmode, PickUpmode
 	}
 
 	private ButtonType type;
@@ -28,6 +28,10 @@ public class EditorToggleButton extends ToggleButton {
 		} else if (type == ButtonType.Destroymode) {
 
 		} else if (type == ButtonType.Startmode) {
+
+		} else if (type == ButtonType.Runmode) {
+
+		} else if (type == ButtonType.PickUpmode) {
 
 		}
 	}

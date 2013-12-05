@@ -11,6 +11,7 @@ public class Assets {
 
 	public static Pixmap editorFloor;
 	public static Pixmap editorWall;
+	public static Pixmap editorStart;
 	public static Pixmap editorBackground;
 	public static Pixmap editorBackgroundBoef;
 	public static Pixmap editorBuildIcon;
@@ -19,6 +20,10 @@ public class Assets {
 	public static Pixmap editorDestroyIcon_toggled;
 	public static Pixmap editorFlagIcon;
 	public static Pixmap editorFlagIcon_toggled;
+	public static Pixmap editorRunIcon;
+	public static Pixmap editorRunIcon_toggled;
+	public static Pixmap editorPickUp1Icon;
+	public static Pixmap editorPickUp1Icon_toggled;
 	public static Pixmap editorNewMapIcon;
 	public static Pixmap editorResizeMapIcon;
 	public static Pixmap editorLoadMapIcon;

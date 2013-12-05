@@ -11,6 +11,11 @@ public class World {
 
 	public Pixmap wall = Assets.editorWall;
 	public Pixmap floor = Assets.editorFloor;
+	public Pixmap start = Assets.editorStart;
+	public Pixmap start2 = Assets.editorFlagIcon;
+
+	public Portefeuille pickups = new Portefeuille();
+	public boolean starttrue = false;
 
 	public float width = 17;
 	public float height = 17;
@@ -130,6 +135,21 @@ public class World {
 			}
 
 		}// End Sanity IF
+			// ruimte voor painten van start plek e.d.
+		// portefeuille met items heeft een bepaalde groote. die loop je met
+		// verschillende waarden.
+		// for(int i = 0, i = portefeuille.length, i++)
+		// if(portefeuille.positie[i] = 1){
+		// teken dan start
+		// if(portefeuille.positie[i] = 2 {
+		// teken dan guard o.i.d.
+		g.drawPixmap(start2, (1 * width), (1 * height), width * 1.1,
+				height * 1.1, cam);
+		int x = 20;
+		int y = 20;
+		g.drawPixmap(start, (x * width), (y * height), width * 1.1,
+				height * 1.1, cam);
+
 	}
 
 	public void paintSelectedIndex(Graphics g, Camera cam) {
@@ -178,11 +198,44 @@ public class World {
 	}
 
 	public void start(int x, int y) {
+		if (starttrue == true) {
+			// remove start
+		}
 		if (x >= 0 && y >= 0 && x < world.length * width
 				&& y < world[0].length * height) {
-			world[(int) (x / width)][(int) (y / height)] = 2;
-			// schrijf iets op de plek van de 2 te onthouden. zodra nieuwe 2.
-			// dan wordt oude 2 een 0
+			int posx = (int) (x / width);
+			int posy = (int) (y / height);
+			PickUp pickupstart = new PickUp(posx, posy, 1);
+			pickups.AddPickUp(pickupstart);
+			starttrue = true; // zet de boolean starttrue op true. de
+								// portefeuille bevat een start plek
+			String res = pickups.toString();
+			System.out.println(res);
+
+		}
+	}
+
+	public void run(int x, int y) {
+		if (x >= 0 && y >= 0 && x < world.length * width
+				&& y < world[0].length * height) {
+			int posx = (int) (x / width);
+			int posy = (int) (y / height);
+			PickUp pickuprun = new PickUp(posx, posy, 2);
+			pickups.AddPickUp(pickuprun);
+			String res = pickups.toString();
+			System.out.println(res);
+		}
+	}
+
+	public void pickup1(int x, int y) {
+		if (x >= 0 && y >= 0 && x < world.length * width
+				&& y < world[0].length * height) {
+			int posx = (int) (x / width);
+			int posy = (int) (y / height);
+			PickUp pickuprun = new PickUp(posx, posy, 3);
+			pickups.AddPickUp(pickuprun);
+			String res = pickups.toString();
+			System.out.println(res);
 		}
 	}
 

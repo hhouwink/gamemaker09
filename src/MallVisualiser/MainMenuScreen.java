@@ -13,20 +13,15 @@ public class MainMenuScreen extends Screen {
 
 	public MainMenuScreen(Game game) {
 		super(game);
-		buttons = new Button[3];
+		buttons = new Button[2];
 		buttons[0] = new MenuButton(MenuButton.ButtonType.Editor, game,
 				Assets.menuButtonEditorMode, 1024 - 350, 200);
 		buttons[0].w = 200;
 		buttons[0].h = 200;
-		buttons[1] = new MenuButton(MenuButton.ButtonType.GrandChallenge, game,
-				Assets.menuButtonGCMode, 100, 300);
-		buttons[1].w = 200;
-		buttons[1].h = 147;
-
-		buttons[2] = new MenuButton(MenuButton.ButtonType.Quit, game,
+		buttons[1] = new MenuButton(MenuButton.ButtonType.Quit, game,
 				Assets.editorToMenuIcon, 1024 - 350, 800 - 350);
-		buttons[2].w = 200;
-		buttons[2].h = 200;
+		buttons[1].w = 200;
+		buttons[1].h = 200;
 	}
 
 	public void update(float deltaTime) {

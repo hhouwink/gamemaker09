@@ -28,9 +28,11 @@ public class LoadingScreen extends Screen {
 				PixmapFormat.ARGB4444);
 		Assets.editorWall = g
 				.newPixmap("Pixel_Gray.png", PixmapFormat.ARGB4444);
+		Assets.editorStart = g
+				.newPixmap("Pixel_Red.png", PixmapFormat.ARGB4444);
 		Assets.editorBackground = g.newPixmap("EditorBackground.png",
 				PixmapFormat.RGB565);
-		Assets.editorBackgroundBoef = g.newPixmap("achtergrondeditor2.png",
+		Assets.editorBackgroundBoef = g.newPixmap("EditorBackground.png",
 				PixmapFormat.RGB565);
 		Assets.editorBuildIcon = g.newPixmap("EditorBuildIcon.png",
 				PixmapFormat.RGB565);
@@ -44,6 +46,15 @@ public class LoadingScreen extends Screen {
 				PixmapFormat.RGB565);
 		Assets.editorFlagIcon_toggled = g.newPixmap(
 				"EditorFlagIcon_toggled.png", PixmapFormat.RGB565);
+		Assets.editorRunIcon = g.newPixmap("EditorRunIcon.png",
+				PixmapFormat.RGB565);
+		Assets.editorRunIcon_toggled = g.newPixmap("EditorRunIcon.png",
+				PixmapFormat.RGB565);
+		Assets.editorPickUp1Icon = g.newPixmap("EditorPickUpIcon.png",
+				PixmapFormat.RGB565);
+		Assets.editorPickUp1Icon_toggled = g.newPixmap("EditorPickUpIcon.png",
+				PixmapFormat.RGB565);
+
 		Assets.editorNewMapIcon = g
 				.newPixmap("newmap.png", PixmapFormat.RGB565);
 		Assets.editorResizeMapIcon = g.newPixmap("resize.png",

@@ -31,7 +31,7 @@ public class EditorScreen extends Screen {
 		world = World.newWorld(100, 100);
 		worldIO = new WorldIO(world, game.getFileIO());
 
-		toggleButtons = new ToggleButton[3];
+		toggleButtons = new ToggleButton[5];
 		{
 			toggleButtons[0] = new EditorToggleButton(
 					EditorToggleButton.ButtonType.Buildmode, game,
@@ -56,53 +56,77 @@ public class EditorScreen extends Screen {
 			toggleButtons[2] = new EditorToggleButton(
 					EditorToggleButton.ButtonType.Startmode, game,
 					Assets.editorFlagIcon, Assets.editorFlagIcon_toggled,
-					824 + 25 + 50 + 25, // x
-					150 // y
+					824 + 25, // x
+					250 // y
 			);
 			toggleButtons[2].w = 50;
 			toggleButtons[2].h = 50;
 		}
+		{
+			toggleButtons[3] = new EditorToggleButton(
+					EditorToggleButton.ButtonType.Runmode, game,
+					Assets.editorRunIcon, Assets.editorRunIcon_toggled,
+					824 + 25 + 50 + 25, // x
+					150 // y
+			);
+			toggleButtons[3].w = 50;
+			toggleButtons[3].h = 50;
+		}
+		{
+			toggleButtons[4] = new EditorToggleButton(
+					EditorToggleButton.ButtonType.PickUpmode, game,
+					Assets.editorPickUp1Icon, Assets.editorPickUp1Icon_toggled,
+					824 + 25, // x
+					150 // y
+			);
+			toggleButtons[4].w = 50;
+			toggleButtons[4].h = 50;
+		}
 
 		// Register shared-toggles:
-		ToggleButton[] sharedToggles = new ToggleButton[3];
+		ToggleButton[] sharedToggles = new ToggleButton[5];
 		sharedToggles[0] = toggleButtons[0];
 		sharedToggles[1] = toggleButtons[1];
 		sharedToggles[2] = toggleButtons[2];
+		sharedToggles[3] = toggleButtons[3];
+		sharedToggles[4] = toggleButtons[4];
 		toggleButtons[0].registerSharedToggles(sharedToggles);
 		toggleButtons[1].registerSharedToggles(sharedToggles);
 		toggleButtons[2].registerSharedToggles(sharedToggles);
+		toggleButtons[3].registerSharedToggles(sharedToggles);
+		toggleButtons[4].registerSharedToggles(sharedToggles);
 		sharedToggles = null;
 
 		buttons = new Button[5];
 		{
 			buttons[0] = new EditorButton(ButtonType.NewMap, game,
 					Assets.editorNewMapIcon, 800, 300, worldIO);
-			buttons[0].w = 50;
-			buttons[0].h = 50;
+			buttons[0].w = 125;
+			buttons[0].h = 75;
 		}
 		{
 			buttons[4] = new EditorButton(ButtonType.ResizeMap, game,
 					Assets.editorResizeMapIcon, 800, 375, worldIO);
-			buttons[4].w = 50;
-			buttons[4].h = 50;
+			buttons[4].w = 125;
+			buttons[4].h = 75;
 		}
 		{
 			buttons[1] = new EditorButton(ButtonType.LoadMap, game,
 					Assets.editorLoadMapIcon, 800, 450, worldIO);
-			buttons[1].w = 50;
-			buttons[1].h = 50;
+			buttons[1].w = 125;
+			buttons[1].h = 75;
 		}
 		{
 			buttons[2] = new EditorButton(ButtonType.SaveMap, game,
 					Assets.editorSaveMapIcon, 800, 525, worldIO);
-			buttons[2].w = 50;
-			buttons[2].h = 50;
+			buttons[2].w = 125;
+			buttons[2].h = 75;
 		}
 		{
 			buttons[3] = new EditorButton(ButtonType.toMenu, game,
 					Assets.editorToMenuIcon, 800, 600, worldIO);
-			buttons[3].w = 50;
-			buttons[3].h = 50;
+			buttons[3].w = 125;
+			buttons[3].h = 75;
 		}
 	}
 
@@ -178,8 +202,18 @@ public class EditorScreen extends Screen {
 									/ bufferWidth + cam.viewX), (int) (event.y
 									* cam.viewH / bufferHeight + cam.viewY));
 						} else if (toggleButtons[2].isToggled) {
-							// Destroy-mode
-							world.destroy((int) (event.x * cam.viewW
+							// Start-mode
+							world.start((int) (event.x * cam.viewW
+									/ bufferWidth + cam.viewX), (int) (event.y
+									* cam.viewH / bufferHeight + cam.viewY));
+						} else if (toggleButtons[3].isToggled) {
+							// Run-Mode
+							world.run(
+									(int) (event.x * cam.viewW / bufferWidth + cam.viewX),
+									(int) (event.y * cam.viewH / bufferHeight + cam.viewY));
+						} else if (toggleButtons[4].isToggled) {
+							// PickUp1-mode
+							world.pickup1((int) (event.x * cam.viewW
 									/ bufferWidth + cam.viewX), (int) (event.y
 									* cam.viewH / bufferHeight + cam.viewY));
 						}
@@ -213,7 +247,7 @@ public class EditorScreen extends Screen {
 			g.resetClipBounds();
 
 			// UI:
-			g.drawPixmap(Assets.editorBackgroundBoef, 674, 0);
+			g.drawPixmap(Assets.editorBackgroundBoef, 780, 0);
 			for (int i = 0; i < toggleButtons.length; i++) {
 				toggleButtons[i].paint(g);
 			}

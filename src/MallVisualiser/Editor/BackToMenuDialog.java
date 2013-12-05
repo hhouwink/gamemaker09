@@ -15,8 +15,8 @@ public class BackToMenuDialog extends JDialog implements PropertyChangeListener 
 
 	private JOptionPane optionPane;
 
-	private String btnString1 = "Opslaan & Afsluiten";
-	private String btnString2 = "Afsluiten";
+	private String btnString1 = "Save & Quit";
+	private String btnString2 = "Escape the prison (Quit)";
 	private String btnString3 = "Cancel";
 
 	/** Creates the reusable dialog. */
@@ -24,10 +24,10 @@ public class BackToMenuDialog extends JDialog implements PropertyChangeListener 
 		super(parentFrame, true);
 		this.parent = parent;
 
-		setTitle("Quiz");
+		setTitle("Quit");
 
 		// Create an array of the text and components to be displayed.
-		String msgString1 = "Eerst opslaan?";
+		String msgString1 = "Save first?";
 		Object[] array = { msgString1 };
 
 		// Create an array specifying the number of dialog buttons
