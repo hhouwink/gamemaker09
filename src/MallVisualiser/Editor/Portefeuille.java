@@ -18,8 +18,16 @@ public class Portefeuille {
 		this.PickUps.remove(index);
 	}
 
-	public String getPickUp(int index) {
-		return this.PickUps.get(index).toString();
+	// public int getPickUpNumber(int index) {
+	// return this.PickUps.get(index).getPickUpNumber();
+	// }
+
+	public PickUp getPickUp(int index) {
+		return this.PickUps.get(index);
+	}
+
+	public int getLenght() {
+		return this.PickUps.size();
 	}
 
 	public String toString() {

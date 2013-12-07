@@ -143,11 +143,21 @@ public class World {
 		// teken dan start
 		// if(portefeuille.positie[i] = 2 {
 		// teken dan guard o.i.d.
+		for (int i = 0; i < pickups.getLenght(); i++) {
+			if (pickups.getPickUp(i).getPickUpNumber() == 3) {
+				int x = pickups.getPickUp(i).getPositieX();
+				int y = pickups.getPickUp(i).getPositieY();
+				g.drawPixmap(start, (x * width), (y * height), width * 1.1,
+						height * 1.1, cam);
+			}
+			if (pickups.getPickUp(i).getPickUpNumber() == 1) {
+				int x = pickups.getPickUp(i).getPositieX();
+				int y = pickups.getPickUp(i).getPositieY();
+				g.drawPixmap(start2, (x * width), (y * height), width * 1.1,
+						height * 1.1, cam);
+			}
+		}
 		g.drawPixmap(start2, (1 * width), (1 * height), width * 1.1,
-				height * 1.1, cam);
-		int x = 20;
-		int y = 20;
-		g.drawPixmap(start, (x * width), (y * height), width * 1.1,
 				height * 1.1, cam);
 
 	}
